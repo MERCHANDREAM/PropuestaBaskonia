@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Propuesta Comercial — Baskonia</title>
+<link rel="icon" href="./assets/imgs/Dibujo01-NoBAK.ico" type="image/x-icon">
+<meta name="description" content="Presentación online de la propuesta comercial Baskonia." />
+<meta name="theme-color" content="#007bff" />
+<style>
+  :root {
+    --brand: #007bff;
+    --bg: #0b0c10;
+    --panel: #11131a;
+    --text: #e9eef7;
+    --muted: #a9b3c7;
+    --card: #0e1117;
+    --border: #1e2230;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  }
+
+  * {
+    box-sizing: border-box
+  }
+
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+    background: linear-gradient(180deg, var(--bg), #0a0c12);
+    color: var(--text);
+    font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif
+  }
+
+  a {
+    color: var(--brand);
+    text-decoration: none
+  }
+
+  a:hover {
+    text-decoration: underline
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    border-radius: 12px;
+    height: auto
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px
+  }
+
+  header.site {
+    position: sticky;
+    top: 0;
+    backdrop-filter: saturate(160%) blur(10px);
+    background: rgba(14, 17, 23, .75);
+    border-bottom: 1px solid var(--border);
+    z-index: 20
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    background: url('./assets/imgs/Dibujo01-NoBAK.png') center/cover no-repeat;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .08)
+  }
+
+  .brand h1 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 700
+  }
+
+  nav {
+    margin-left: auto;
+    display: flex;
+    gap: 18px;
+    align-items: center
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    gap: 18px
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, #141824, #0f1320);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    transition: .2s ease transform, .2s ease background
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+    background: #151a2a
+  }
+
+
+  .hero {
+    padding: 72px 0 48px;
+    border-bottom: 1px solid var(--border);
+    background: radial-gradient(1200px 400px at 50% -60px, rgba(0, 123, 255, .18), transparent 60%)
+  }
+
+  .hero h2 {
+    font-size: 2.1rem;
+    margin: .2rem 0 1rem;
+    font-weight: 800
+  }
+
+  .subtitle {
+    color: var(--muted);
+    max-width: 70ch
+  }
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 22px
+  }
+
+  section.card {
+    grid-column: span 12;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--card), #0c0f15)
+  }
+
+  section.card h3 {
+    margin-top: 0;
+    font-size: 1.25rem
+  }
+
+  .kicker {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(0, 123, 255, .12);
+    color: #a5c7ff;
+    border: 1px solid rgba(0, 123, 255, .25);
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .04em
+  }
+
+
+  .price-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 12px
+  }
+
+  .price-table th,
+  .price-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top
+  }
+
+  .price-table th {
+    color: #cbd7ee;
+    text-align: left;
+    font-weight: 600;
+    background: rgba(0, 123, 255, .06)
+  }
+
+
+  .muted {
+    color: var(--muted)
+  }
+
+
+  .media {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 22px
+  }
+
+  @media (max-width:900px) {
+    .media {
+      grid-template-columns: 1fr
+    }
+  }
+
+
+  footer.site {
+    margin-top: 42px;
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+    color: var(--muted)
+  }
+
+
+  .anchor {
+    position: relative
+  }
+
+  .anchor::before {
+    content: "";
+    display: block;
+    height: 72px;
+    margin-top: -72px;
+    visibility: hidden
+  }
+
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(0, 123, 255, .15);
+    border: 1px solid rgba(0, 123, 255, .3)
+  }
+
+
+  /* =========================
+MOBILE-ONLY FIXES (≤767px)
+========================= */
+  @media (max-width:767px) {
+
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%
+    }
+
+    .container {
+      padding: 16px
+    }
+
+    .topbar,
+    nav {
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    nav .btn {
+      padding: 8px 12px;
+      white-space: nowrap
+    }
+
+    .hero h2 {
+      font-size: 1.6rem
+    }
+
+    .grid {
+      grid-template-columns: 1fr
+    }
+
+    section.card {
+      width: 100%;
+      max-width: 100%;
+      padding: 20px
+    }
+
+    .media {
+      grid-template-columns: 1fr
+    }
+
+    .price-table {
+      table-layout: fixed
+    }
+
+    .price-table th,
+    .price-table td {
+      word-wrap: break-word
+    }
+  }
+</style>
+</head>
+
+<body>
+  <header class="site">
+    <div class="container topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Propuesta Comercial — Baskonia</h1>
+      </div>
+      <nav aria-label="Secciones">
+        <a class="btn" href="#precios">Precios</a>
+        <a class="btn" href="#aclaraciones">Aclaraciones</a>
+        <a class="btn" href="#recomendaciones">Recomendaciones</a>
+        <a class="btn" href="#forma-de-pago">Pago</a>
+        <a class="btn" href="#procedimientos">Procedimientos</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="kicker">MERCHANDREAM</span>
+        <h2>Relación de Precios y Cantidades</h2>
+      </div>
+    </section>
+
+    <div class="container grid" id="precios">
+
+      <section class="card anchor" id="apartado-1">
+        <h3>Apartado 1 — Tamaño 8 cm</h3>
+        <div class="media">
+          <div>
+            <p class="muted">Ideal para coleccionables y/o instalar en salpicaderos de vehículos.</p>
+            <table class="price-table" aria-label="Precios tamaño 8 cm">
+              <thead>
+                <tr>
+                  <th>Condición</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pedido mínimo</td>
+                  <td>100 unidades por jugador</td>
+                </tr>
+                <tr>
+                  <td>Precio unidad por avión</td>
+                  <td>7,65€ + IVA</td>
+                </tr>
+                <tr>
+                  <td>Precio por barco</td>
+                  <td>7,20€ + IVA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <img src="./assets/imgs/dolls 8 cm.jpg" alt="Foto tamaño 8 cm" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="apartado-2">
+        <h3>Apartado 2 — Tamaño 14 cm</h3>
+        <div class="media">
+          <div>
+            <table class="price-table" aria-label="Precios tamaño 14 cm">
+              <thead>
+                <tr>
+                  <th>Condición</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pedido mínimo</td>
+                  <td>100 unidades por jugador</td>
+                </tr>
+                <tr>
+                  <td>Precio unidad por avión</td>
+                  <td>11,90€ + IVA</td>
+                </tr>
+                <tr>
+                  <td>Precio por barco</td>
+                  <td>10,40€ + IVA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <img src="./assets/imgs/dolls 14cm.jpg" alt="Foto tamaño 14 cm" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="apartado-3">
+        <h3>Apartado 3 — Tamaño 18 cm</h3>
+        <div class="media">
+          <div>
+            <table class="price-table" aria-label="Precios tamaño 18 cm">
+              <thead>
+                <tr>
+                  <th>Condición</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pedido mínimo</td>
+                  <td>100 unidades por jugador</td>
+                </tr>
+                <tr>
+                  <td>Precio unidad por avión</td>
+                  <td>13,50€ + IVA</td>
+                </tr>
+                <tr>
+                  <td>Precio por barco</td>
+                  <td>11,40€ + IVA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <img src="./assets/imgs/dolls 18cm.jpg" alt="Foto tamaño 18 cm" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="apartado-4">
+        <h3>Apartado 4 — Tamaño 18 cm + sonido</h3>
+        <div class="media">
+          <div>
+            <table class="price-table" aria-label="Precios tamaño 18 cm + sonido">
+              <thead>
+                <tr>
+                  <th>Condición</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pedido mínimo</td>
+                  <td>100 unidades por jugador</td>
+                </tr>
+                <tr>
+                  <td>Precio unidad por avión</td>
+                  <td>17€ + IVA</td>
+                </tr>
+                <tr>
+                  <td>Precio por barco</td>
+                  <td>14,90€ + IVA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <img src="./assets/imgs/dolls 18 cm con sonido.jpg" alt="Foto tamaño 18 cm con sonido" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="apartado-5">
+        <h3>Apartado 5 — Tamaño 40 cm</h3>
+        <div class="media">
+          <div>
+            <table class="price-table" aria-label="Precios tamaño 40 cm">
+              <thead>
+                <tr>
+                  <th>Condición</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pedido mínimo</td>
+                  <td>50 unidades por jugador</td>
+                </tr>
+                <tr>
+                  <td>Precio unidad por avión</td>
+                  <td>90€ + IVA</td>
+                </tr>
+                <tr>
+                  <td>Precio por barco</td>
+                  <td>75€ + IVA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <img src="./assets/imgs/dolls 40 cm.jpg" alt="Foto tamaño 40 cm" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="apartado-6">
+        <h3>Apartado 6 — Muñecos de pared tamaño 90×40×90 cm</h3>
+        <div class="media">
+          <div>
+            <table class="price-table" aria-label="Precios muñecos de pared 90x40x90 cm">
+              <thead>
+                <tr>
+                  <th>Condición</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pedidos mínimos</td>
+                  <td>10 unidades por jugador.</td>
+                </tr>
+                <tr>
+                  <td>Precio unidad por barco</td>
+                  <td>600€ + IVA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <img src="./assets/imgs/dolls pared.jpg" alt="Foto muñeco de pared" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="apartado-7">
+        <h3>Apartado 7 — Muñecos a tamaño real 2 m</h3>
+        <div class="media">
+          <div>
+            <table class="price-table" aria-label="Precios muñecos a tamaño real 2 m">
+              <thead>
+                <tr>
+                  <th>Condición</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Precio por unidad</td>
+                  <td>3000€ + IVA</td>
+                </tr>
+                <tr>
+                  <td>Transporte</td>
+                  <td>Por barco</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <img src="./assets/imgs/doll tamaño real.jpg" alt="Foto muñeco a tamaño real" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="apartado-8">
+        <h3>Apartado 8 — Muñecos Vintage de 14 cm</h3>
+        <div class="media">
+          <div>
+            <table class="price-table" aria-label="Precios muñecos vintage 14 cm">
+              <thead>
+                <tr>
+                  <th>Condición</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pedidos mínimos</td>
+                  <td>100 unidades por jugador</td>
+                </tr>
+                <tr>
+                  <td>Precio unidad por avión</td>
+                  <td>9,90€ + IVA</td>
+                </tr>
+                <tr>
+                  <td>Precio por barco</td>
+                  <td>7,90€ + IVA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <img src="./assets/imgs/4 futbolistas.jpg" alt="Foto muñeco vintage" />
+            <img src="./assets/imgs/3 baloncesto.jpg" alt="Foto muñeco vintage" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="aclaraciones">
+        <h3>Aclaraciones</h3>
+        <p>Diferenciamos los precios del transporte por avión o por barco con el fin de llegar a la campaña de Navidad,
+          por lo que deberíamos usar el transporte aéreo. El barco tarda 45 días en llegar.</p>
+      </section>
+
+      <section class="card anchor" id="recomendaciones">
+        <h3>Recomendaciones</h3>
+        <ul>
+          <li>Hacer los muñecos tanto de <strong>Babazorro</strong> como de <strong>Aker</strong> con sonido. Le podemos
+            poner el himno de cada equipo correspondiente. <em>Apartado 4.</em></li>
+          <li>Hacer los muñecos vintage tanto para el futbol como el baloncesto en sus variedades, hombre, mujer, blanco
+            y negro.</li>
+          <li>Hacer 1 muñeco a tamaño real de Babazorro y Aker para deleite de los aficionados. Después de negociar en
+            fábrica creemos que es el mejor precio que os podemos dar y que nos sirva de escaparate.</li>
+        </ul>
+      </section>
+
+      <section class="card anchor" id="forma-de-pago">
+        <h3>Forma de Pago</h3>
+        <p>Para que Los Clubs no tengan que hacer un desembolso inicial, podemos proporcionar el producto para la
+          campaña de Navidad y que el pago se realice el 1 de febrero.</p>
+      </section>
+
+      <section class="card anchor" id="procedimientos">
+        <h3>Procedimientos</h3>
+        <ol>
+          <li>Firma del pedido bajo contrato</li>
+          <li>Se realizan las muestras para su aprobación</li>
+          <li>Se realiza la fabricación.</li>
+          <li>Envío de producto.</li>
+        </ol>
+        <img src="./assets/imgs/foto mascotas.jpg" alt="Foto mascotas" />
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="container">
+      <p>© <span id="y"></span> Propuesta Comercial — Baskonia · Presentación online.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // año actual en el pie
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
